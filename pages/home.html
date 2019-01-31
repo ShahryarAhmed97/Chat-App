@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat App Home</title>
+    <link rel="stylesheet" href="../styleSheets/home.css">
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+
+    <script type = "text/javascript" >
+        function preventBack(){window.history.forward();}
+         setTimeout("preventBack()", 0);
+         window.onunload=function(){null};
+     </script>
+</head>
+
+
+<body onLoad="loadFun()">
+    <div  style="text-align:right;">
+        <button  class="btn btn-danger" onclick="logOutFun()"> Sign Out</button>
+</div>
+<div style="text-align:center;">
+
+    <h1>HOME</h1>
+</div>
+
+<div class="col-md-12"  id="homeDiv">
+
+    <div class="col-md-4" id="allUsers">
+        <table>
+            <tbody  id="allContacts" >
+
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="col-md-8" id="chatArea">
+        <div style="border:2px solid black;height: 470px;" >
+            <div class="form-group">
+
+                <input type="text" name="recieverId" id="recieverId" class="form-control" readonly>
+            </div>
+
+            <div style="border:2px solid rgb(0, 0, 0);height: 400px; overflow: scroll;" >
+                <table>
+                    <tbody id="msgsViewDiv">
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+<br>
+        <div class="form-group" >
+            <div class="form-group col-md-11">
+
+                <input type="text" name="msg" id="msg" class="form-control" style="overflow:scroll">
+            </div>
+            <div class="col-md-1">
+
+                <button class="btn btn-success" onclick="sendFun()">Send</button>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+    <script src="../scripts/home.js"></script>
+</body>
+</html>

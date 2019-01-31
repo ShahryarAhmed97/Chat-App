@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+    <title>Chat App SignUp</title>
+    <link rel="stylesheet" href="./styleSheets/index.css">
+</head>
+<body>
+    <div>
+        <a href="./pages/logIn.html">LOG IN</a>
+    </div>
+        <div>
+                <button style="color:white;background-color:rgb(99, 99, 218);" onclick="fbLogFun()">login From FB</button>
+           </div>
+    <div id="signDiv">
+        <h2>Sign up</h2>
+        <div>
+          <input type="email" id="email" name="email" placeholder="Enter Email Here ..">
+        </div>
+        <br>
+        <br>
+        <div>
+            <input type="password" id="password" name="password" placeholder="Enter Password Here ..">
+          </div>
+          <br>
+          <br>
+           <div>
+               <button onclick="signFun()">SignUp</button>
+          </div>
+
+    </div>
+    <script src="./scripts/index.js"></script>
+</body>
+</html>

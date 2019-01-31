@@ -1,0 +1,26 @@
+#signDiv{
+    height:500px; 
+    width: 500px;
+    /* border: 2px solid red; */
+    margin-left: 300px;
+    margin-top: 200px;
+}
+
+input{
+    font-size: 1.3em;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+
+}
+
+button{
+    background-color: rgb(104, 179, 104);
+    color: white;
+    font-size: 1.3em;
+    height: 100%;
+    width: 50%;
+    padding: 10px;
+
+}

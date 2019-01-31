@@ -1,0 +1,21 @@
+
+#homeDiv{
+    border:2px solid red;
+    height:550px;
+}
+
+#allUsers{
+    border:2px solid rgb(55, 0, 255);
+    height:550px;
+
+}
+
+#chatArea{
+    border:2px solid rgb(9, 255, 0);
+    height:550px;
+
+}
+
+
+
+
