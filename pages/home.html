@@ -34,6 +34,13 @@
 <div class="col-md-12"  id="homeDiv">
 
     <div class="col-md-4" id="allUsers">
+        <div class="form-group col-md-12" >
+            <input type="text" name="myContacts" id="myContacts" class="form-control" placeholder="Add new Contact . . ">
+       <div class="col-md-4">
+
+           <button class="btn btn-success " onclick="addContacts()">Add</button>
+       </div>
+        </div>
         <table>
             <tbody  id="allContacts" >
 
@@ -50,11 +57,17 @@
             </div>
 
             <div style="border:2px solid rgb(0, 0, 0);height: 400px; overflow: scroll;" >
-                <table>
-                    <tbody id="msgsViewDiv">
+                <table class="col-md-5">
+                    <tbody id="msgsViewDiv1">
 
                     </tbody>
                 </table>
+
+                <table class="col-md-5">
+                        <tbody id="msgsViewDiv2">
+    
+                        </tbody>
+                    </table>
 
             </div>
 
