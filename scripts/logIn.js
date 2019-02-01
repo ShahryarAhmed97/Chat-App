@@ -16,6 +16,9 @@ var config = {
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then((success)=>{
         let userUid=firebase.auth().currentUser.uid;
+        let userEmail=firebase.auth().currentUser.email;
+        localStorage.setItem('currentUserData',userEmail);
+        
         localStorage.setItem('currentUserUid',userUid);
         location.href="../pages/home.html";
 

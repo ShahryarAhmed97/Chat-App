@@ -1,0 +1,71 @@
+
+function contactIdFun(email,key){
+document.getElementById('msg').value="";
+  var userUid=localStorage.getItem('currentUserUid');
+  var recieverEmail=email;
+  var recieverId=key;
+  localStorage.setItem('recieverId',key)
+  localStorage.setItem('recieverEmail',email)
+var msgsViewDiv1=document.getElementById('msgsViewDiv1');
+   document.getElementById('recieverId').value=recieverEmail;
+var msgRef=userUid+recieverId;
+
+
+   firebase.database().ref('msgs/'+msgRef)
+   .orderByChild("dateTime")
+   .on('value',(data)=>{
+     var msgsData=data.val();
+     msgsViewDiv1.innerHTML="";
+     for(var key in msgsData){
+      
+
+        
+        msgsViewDiv1.innerHTML+=
+        `
+        <tr style='background-color:green;'>
+        <td>${msgsData[key].msg} </td>
+        <td>${msgsData[key].tStamp} </td>
+        
+        </tr>
+        <br><br>
+        `
+        msgsViewDiv1.scrollTo(0,msgsViewDiv1.scrollHeight);
+     }
+
+
+   })
+
+
+
+  //  var msgsViewDiv1=document.getElementById('msgsViewDiv1');
+
+   var msgRef1=recieverId+userUid;
+  firebase.database().ref('msgs/'+msgRef1)
+  .orderByChild("dateTime")
+  .on('value',(data)=>{
+    var msgsData=data.val();
+    // msgsViewDiv1.innerHTML="";
+    for(var key in msgsData){
+     
+
+       
+       msgsViewDiv1.innerHTML+=
+       `
+       <tr   style='background-color:blue;'>
+       <td>${msgsData[key].msg} </td>
+       <td>${msgsData[key].tStamp} </td>
+
+
+       </tr>
+       <br><br>
+       `
+       msgsViewDiv1.scrollTo(0,msgsViewDiv1.scrollHeight);
+
+    }
+   
+   })
+
+
+
+
+}

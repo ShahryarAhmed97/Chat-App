@@ -1,0 +1,67 @@
+
+function contactIdFun(email,key){
+document.getElementById('msg').value="";
+  var userUid=localStorage.getItem('currentUserUid');
+  var recieverEmail=email;
+  var recieverId=key;
+  localStorage.setItem('recieverId',key)
+  localStorage.setItem('recieverEmail',email)
+var msgsViewDiv2=document.getElementById('msgsViewDiv2');
+   document.getElementById('recieverId').value=recieverEmail;
+var msgRef=userUid+recieverId;
+
+
+   firebase.database().ref('msgs/'+msgRef)
+   .on('value',(data)=>{
+     var msgsData=data.val();
+     msgsViewDiv2.innerHTML="";
+     for(var key in msgsData){
+      
+
+        
+        msgsViewDiv2.innerHTML+=
+        `
+        <tr>
+        <td>${msgsData[key].msg} </td>
+        </tr>
+        <br><br>
+        `
+      
+     }
+
+
+   }).then((success)=>{
+
+    var msgsViewDiv1=document.getElementById('msgsViewDiv1');
+
+    var msgRef1=recieverId+userUid;
+   firebase.database().ref('msgs/'+msgRef1)
+   .on('value',(data)=>{
+     var msgsData=data.val();
+     msgsViewDiv1.innerHTML="";
+     for(var key in msgsData){
+      
+
+        
+        msgsViewDiv1.innerHTML+=
+        `
+        <tr>
+        <td>${msgsData[key].msg} </td>
+        </tr>
+        <br><br>
+        `
+      
+     }
+    
+    })
+
+
+   
+    
+
+
+   })
+
+
+}
+
