@@ -1,17 +1,25 @@
 
 #homeDiv{
-    border:2px solid red;
+    /* border:2px solid red; */
     height:550px;
 }
 
 #allUsers{
-    border:2px solid rgb(55, 0, 255);
+    /* border:2px solid rgb(55, 0, 255); */
     height:550px;
 
 }
 
+input[type="text"]{
+    font-size: 1.2em;
+}
+
+::placeholder{
+    color:rgb(29, 119, 29) !important;
+}
+
 #chatArea{
-    border:2px solid rgb(9, 255, 0);
+    /* border:2px solid rgb(9, 255, 0); */
     height:550px;
 
 }
@@ -20,9 +28,9 @@
 tr{
 
     /* border:2px solid rgb(118, 136, 240); */
-    box-shadow: 0px 0px 20px black;
-    margin: 5px;
-    font-size: 1.3em;
+    /* box-shadow: 0px 0px 20px black; */
+    /* margin: 5px;
+    font-size: 1.3em; */
 
 }
 

@@ -9,11 +9,15 @@ var config = {
   firebase.initializeApp(config);
 var currentUserData=localStorage.getItem('currentUserData')
   console.log(currentUserData)
+
+
+
 function loadFun(){
 
   var allContacts=document.getElementById("allContacts");
   var userUid=localStorage.getItem('currentUserUid');
-
+  var welcm=localStorage.getItem('currentUserData');
+document.getElementById('h1').innerHTML="Welcome  "+welcm
 var userEmails=[];
   firebase.database().ref("myContacts/"+userUid)
   .on("value",(data1)=>{
@@ -41,9 +45,8 @@ console.log(userEmails);
   
   <tr>
   
-  <td>${allUsers[key].email}</td>
-  <td></td>
-  <td><button class='btn btn-success' onclick='contactIdFun("${allUsers[key].email}","${key}")'>Send Message</button></td>
+  
+  <td><button class='btn btn-success' style="width:400px; font-size:1.3em;background-color:transparent;color:green" onclick='contactIdFun("${allUsers[key].email}","${key}")'>${allUsers[key].email}</button></td>
   </tr>
   `
         }
@@ -132,6 +135,12 @@ function logOutFun(){
   });    
 }
 
+function updateScroll(){
+  var scrollDiv=document.getElementById('scrollDiv');
+  scrollDiv.scrollTop = scrollDiv.scrollHeight;
+}
+
+
 
 
 
@@ -167,18 +176,24 @@ function contactIdFun(email,key){
           
           msgsViewDiv2.innerHTML+=
           `
-          <tr>
-          <td>${msgsData[key].msg} </td>
-          <td>${msgsData[key].tStamp} </td>
-          <td>${msgsData[key].currentUserData} </td>
-          
+          <table  style='overflow-wrap: break-word;padding:10px;border-radius:10px;box-shadow:0px 0px 20px grey;width:200px !important ;'>
+          <tr  style='padding:10px'>
+          <td style='font-size:1.3em;padding:10px;overflow-wrap: break-word;width:200px !important ;' >${msgsData[key].msg} </td>
+         
+         </tr>
 
-          </tr>
+        <tr style='text-align:right; color:grey;border-top:2px solid lightgrey;padding:10px;'>
+        <td>${msgsData[key].tStamp}&nbsp;&nbsp;&nbsp; ${msgsData[key].currentUserData} </td>
+        </tr>
+      
+          </table>
           <br><br>
           `
         
        }
-  
+
+      //  setInterval(updateScroll,1000);
+
   
      })
   
