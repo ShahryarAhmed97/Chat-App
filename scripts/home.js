@@ -176,9 +176,9 @@ function contactIdFun(email,key){
           
           msgsViewDiv2.innerHTML+=
           `
-          <table  style='overflow-wrap: break-word;padding:10px;border-radius:10px;box-shadow:0px 0px 20px grey;width:200px !important ;'>
+          <table   style='overflow-wrap: break-word;padding:10px;border-radius:10px;box-shadow:0px 0px 20px grey;'>
           <tr  style='padding:10px'>
-          <td style='font-size:1.3em;padding:10px;overflow-wrap: break-word;width:200px !important ;' >${msgsData[key].msg} </td>
+          <td style='font-size:1.3em;padding:10px;overflow-wrap: break-word;width:100px !important ;' ><p  style='width:600px !important ;overflow-wrap: break-word;'>${msgsData[key].msg}</p> </td>
          
          </tr>
 
@@ -192,7 +192,7 @@ function contactIdFun(email,key){
         
        }
 
-      //  setInterval(updateScroll,1000);
+       setInterval(updateScroll,1000);
 
   
      })
